@@ -1,4 +1,4 @@
-export const Criminal = (criminalObj) => {
+export const Criminal = (criminalObj) => {   //makes a criminal into HTML represtentation
     return `
     <div class="criminal">
         <h5>${criminalObj.name}</h5>
