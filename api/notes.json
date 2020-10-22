@@ -1,0 +1,11 @@
+{
+    "notes": [
+        {
+        "dateOfInterview": "DateOfNote",
+        "timestamp": "timeOfNote",
+        "author": "noteAuthor",
+        "suspect": "noteSuspect",
+        "note": "noteText"
+        }   
+    ]
+}

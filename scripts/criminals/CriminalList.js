@@ -4,27 +4,30 @@ import { getCriminals, useCriminals } from "./CriminalProvider.js"
 import { Criminal } from "./Criminal.js"
 import { useConvictions } from "./convictions/ConvictionProvider.js"
 
+const eventHub = document.querySelector(".container")
+
 const criminalsContainer = document.querySelector(".criminalsContainer")
 
-const eventHub = document.querySelector(".container")
+
 
 export const criminalList = () => {
     getCriminals()
         .then(() => {
             const criminalArray = useCriminals()
+            render(criminalArray)
 
-            let criminalsHTMLRepresentations = ""
-            for (const criminal of criminalArray) {
+            // let criminalsHTMLRepresentations = ""
+            // for (const criminal of criminalArray) {
                     
-                criminalsHTMLRepresentations += Criminal(criminal)
-            }
+            //     criminalsHTMLRepresentations += Criminal(criminal)
+            // }
 
-                criminalsContainer.innerHTML = `
-            <h3>Glassdale Criminals</3>
-            <section class="criminalsList">
-                ${criminalsHTMLRepresentations}
-            </section>
-            `
+            //     criminalsContainer.innerHTML = `
+            // <h3>Glassdale Criminals</3>
+            // <section class="criminalsList">
+            //     ${criminalsHTMLRepresentations}
+            // </section>
+            // `
         })
 }
 
@@ -33,8 +36,8 @@ eventHub.addEventListener("crimeSelected", event => {
 
     if (event.detail.crimeThatWasChosen !== 0) {
 
-    const criminalArray = useCriminals()
-    console.log("2 array of criminals", criminalArray)
+    const criminalsArray = useCriminals()
+    console.log("2 array of criminals", criminalsArray)
 
     const convictionsArray = useConvictions()
     console.log("3 array of convictions", convictionsArray)
@@ -45,7 +48,7 @@ eventHub.addEventListener("crimeSelected", event => {
 
     console.log("4 convictionThatWasChosen", convictionThatWasChosen)
 
-    const filteredCriminalsArray = criminalArray.filter(criminalObj => {
+    const filteredCriminalsArray = criminalsArray.filter(criminalObj => {
         return criminalObj.name === convictionThatWasChosen.name
     })
 
@@ -57,18 +60,24 @@ eventHub.addEventListener("crimeSelected", event => {
 
 eventHub.addEventListener("officerSelected", officerSelectedEventObj => {
     const selectedOfficerName = officerSelectedEventObj.detail.officerName
-    console.log("CriminalList: officerSelected custom event has been heard on the event hub, selected officer name: ", selectedOfficerName)
+    console.log("5 CriminalList: officerSelected custom event has been heard on the event hub, selected officer name: ", selectedOfficerName)
 
     const criminalsArray = useCriminals()
-    console.log("criminalsArray", criminalsArray)
+    console.log("6 criminalsArray", criminalsArray)
     const filteredArrayCriminals = criminalsArray.filter(
         (criminalObj) => {
-            return criminalObj.arrestingOfficer === selectedOfficerName
-        }
-    )
-        console.log("CriminalList: Array of criminals filtered for only criminals that were arrested by selected officer", selectedOfficerName)
+            // return criminalObj.arrestingOfficer === selectedOfficerName
+      
+            if (criminalObj.arrestingOfficer === selectedOfficerName) {
+                return true
+              }
+              return false
+            }
+          )
+          console.log("CriminalList: Array of criminals filtered for only the criminals that were arrested by selected officer", filteredArrayCriminals)
 
         render(filteredArrayCriminals)
+        console.log("7 CriminalList: Filtered list of criminals rendered to DOM")
 })
    
    const render = (criminalsArray) => {
