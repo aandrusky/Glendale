@@ -48,8 +48,12 @@ eventHub.addEventListener("crimeSelected", event => {
 
     console.log("4 convictionThatWasChosen", convictionThatWasChosen)
 
+     /*
+      Now that we have the name of the chosen crime, filter the criminals application state down to the people that committed the crime
+    */
+
     const filteredCriminalsArray = criminalsArray.filter(criminalObj => {
-        return criminalObj.name === convictionThatWasChosen.name
+        return criminalObj.conviction === convictionThatWasChosen.name
     })
 
     render(filteredCriminalsArray)
