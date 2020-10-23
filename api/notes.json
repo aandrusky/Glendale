@@ -1,11 +1,36 @@
 {
-    "notes": [
-        {
-        "dateOfInterview": "DateOfNote",
-        "timestamp": "timeOfNote",
-        "author": "noteAuthor",
-        "suspect": "noteSuspect",
-        "note": "noteText"
-        }   
-    ]
+  "notes": [
+    {
+      "dateOfInterview": "2020-10-06",
+      "timestamp": 1603465066701,
+      "author": "bob",
+      "suspect": "asdfas",
+      "note": "asdfa",
+      "id": 1
+    },
+    {
+      "dateOfInterview": "2020-09-30",
+      "timestamp": 1603465105400,
+      "author": "asdf",
+      "suspect": "asdf",
+      "note": "",
+      "id": 2
+    },
+    {
+      "dateOfInterview": "",
+      "timestamp": 1603465504862,
+      "author": "",
+      "suspect": "",
+      "note": "",
+      "id": 3
+    },
+    {
+      "dateOfInterview": "2020-10-06",
+      "timestamp": 1603465509191,
+      "author": "asdf",
+      "suspect": "asdf",
+      "note": "asdf",
+      "id": 4
+    }
+  ]
 }

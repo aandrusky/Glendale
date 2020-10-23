@@ -20,7 +20,7 @@ export const getNotes = () => {
 }
 
 export const useNotes = () => {
-    return notes.slice
+    return notes.slice()
 }
 
 export const saveNote = (note) => {
