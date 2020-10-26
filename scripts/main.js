@@ -1,9 +1,17 @@
-import { getConvictions } from "./criminals/convictions/ConvictionProvider.js"
-import { convictionSelect } from "./criminals/convictions/ConvictionSelect.js"
-import { criminalList } from "./criminals/CriminalList.js"
-import { officerList } from "./officers/OfficerList.js"
 
+import { convictionSelect } from "./criminals/convictions/ConvictionSelect.js";
+import { criminalList } from "./criminals/CriminalList.js";
+import { officerList } from "./officers/OfficerList.js";
+import { OfficerSelect } from "./officers/OfficerSelect.js";
+import { NoteForm } from "./Notes/NoteForm.js";
+import { noteList} from "./Notes/NoteList.js";
+import { createAlibiEventListener } from "./criminals/ALibiList.js";
+
+NoteForm()
 criminalList()
 officerList()
-getConvictions()
 convictionSelect()
+OfficerSelect()
+noteList()
+
+createAlibiEventListener()

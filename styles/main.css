@@ -11,3 +11,16 @@
     padding: .5rem;
     flex-basis: 25%;
 }
+
+.ivestigation {
+    display: flex;
+}
+
+.criminalsContainer {
+    flex: 4
+}
+
+.notesContainer {
+    flex: 3
+}
+

@@ -1,6 +1,6 @@
-let criminals = []
+let criminals = []  //<stores criminal api from getCriminals
 
-export const useCriminals = () => {
+export const useCriminals = () => {  //<uses array^ for later use in code
     return criminals.slice()
 }
 
