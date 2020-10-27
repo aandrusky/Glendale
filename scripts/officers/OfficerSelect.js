@@ -2,15 +2,15 @@ import { getOfficers, useOfficers } from "./OfficerProvider.js"
 
 const officersFilterContainer = document.querySelector(".filters__officer")
 const eventHub = document.querySelector(".container")
-console.log("OfficersSelect: getting reference to container for dropdown and eventHub")
+// console.log("OfficersSelect: getting reference to container for dropdown and eventHub")
 
 export const OfficerSelect = () => {
-    console.log("OfficerSelect: Get data from API and render dropdown to the DOM")
+    // console.log("OfficerSelect: Get data from API and render dropdown to the DOM")
 
     getOfficers()
         .then(() => {
             const officersArray = useOfficers()
-            console.log("officersArrays", officersArray)
+            // console.log("officersArrays", officersArray)
 
             render(officersArray)
 

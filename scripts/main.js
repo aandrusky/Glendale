@@ -6,6 +6,9 @@ import { OfficerSelect } from "./officers/OfficerSelect.js";
 import { NoteForm } from "./Notes/NoteForm.js";
 import { noteList} from "./Notes/NoteList.js";
 import { createAlibiEventListener } from "./criminals/ALibiList.js";
+import { renderWitnessButton } from "./Witnesses/WitnessStmntButton.js";
+
+
 
 NoteForm()
 criminalList()
@@ -13,5 +16,5 @@ officerList()
 convictionSelect()
 OfficerSelect()
 noteList()
-
 createAlibiEventListener()
+renderWitnessButton()
