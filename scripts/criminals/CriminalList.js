@@ -6,7 +6,7 @@ import { useConvictions } from "./convictions/ConvictionProvider.js"
 
 const eventHub = document.querySelector(".container")
 
-const criminalsContainer = document.querySelector(".criminalsContainer")
+const criminalsContainer = document.querySelector(".caseDataContainer")
 
 
 

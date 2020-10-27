@@ -14,7 +14,7 @@ export const noteList = () => {
     getNotes()
     .then(() => {
     const allNotes = useNotes()
-    console.log("all notes", allNotes)
+    // console.log("all notes", allNotes)
     render(allNotes)
 
     })
