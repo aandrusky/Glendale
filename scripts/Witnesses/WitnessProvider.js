@@ -1,12 +1,7 @@
 let witnesses = []  //<stores witness api from getWitnesses
 
-export const useWitnessStatements = () => {  //<uses array^ for later use in code
-    return witnesses.slice()
-}
-
-
 export const getWitnessStatements = () => {
-    return fetch("http://criminals.glassdale.us/witnesses")
+    return fetch("https://criminals.glassdale.us/witnesses")
         .then(
             response => response.json())
         .then(
@@ -15,4 +10,8 @@ export const getWitnessStatements = () => {
                 witnesses = parsedWitnessesStatements
             }
         )
+}
+
+export const useWitnessStatements = () => {  //<uses array^ for later use in code
+    return witnesses.slice()
 }

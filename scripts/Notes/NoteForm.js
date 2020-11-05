@@ -1,15 +1,23 @@
 import { saveNote } from "./NotesDataProvider.js"
+import { useCriminals, getCriminals } from "../criminals/CriminalProvider.js"
 
 const contentTarget = document.querySelector(".noteFormContainer")
 const eventHub = document.querySelector(".container")
 
 
 
-const render = () => {
+const render = (arrayOfCriminals) => {
     contentTarget.innerHTML = `
         <input id="note--dateOfInterview" type="date"/>
         <input id="note--author" placeholder="Your name here" type="text"/>
-        <input id="note--suspect" placeholder="Suspect name here"type="text"/>
+        <select id="noteForm--criminal" class="criminalSelect">
+        <option value="0">Select Crimnal...</option>
+        ${
+            arrayOfCriminals.map(criminal => {
+              return `<option value="${ criminal.id }">${ criminal.name }</option>`
+            }).join("")
+        }    
+        </select>
         <textarea id="note--note" placeholder="Your note here"></textarea>
         <button id="saveNote">Save Note</button>
     `
@@ -20,7 +28,7 @@ eventHub.addEventListener("click", clickEvent => {
               // takes our user input VALUES (.VALUE)
         const dateOfInterview = document.querySelector("#note--dateOfInterview").value
         const author = document.querySelector("#note--author").value
-        const suspect = document.querySelector("#note--suspect").value
+        const criminalId = parseInt(document.querySelector("#note--criminal").value)
         const note = document.querySelector("#note--note").value
         const timestamp = Date.now()
 
@@ -30,7 +38,7 @@ eventHub.addEventListener("click", clickEvent => {
             dateOfInterview,
             timestamp,
             author,
-            suspect,
+            criminalId,
             note
         }
 
@@ -40,5 +48,10 @@ eventHub.addEventListener("click", clickEvent => {
 })
 
 export const NoteForm = () => {
-    render()
+    getCriminals()
+    .then(() => {
+        const listOfCriminals = useCriminals()
+        render(listOfCriminals)
+    })
+    
 }

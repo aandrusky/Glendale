@@ -4,33 +4,17 @@
       "dateOfInterview": "2020-10-06",
       "timestamp": 1603465066701,
       "author": "bob",
-      "suspect": "asdfas",
+      "criminalId": "asdfas",
       "note": "asdfa",
       "id": 1
     },
     {
-      "dateOfInterview": "2020-09-30",
-      "timestamp": 1603465105400,
-      "author": "asdf",
-      "suspect": "asdf",
-      "note": "",
+      "dateOfInterview": "2020-11-25",
+      "timestamp": 1604611389404,
+      "author": "boo",
+      "criminalId": null,
+      "note": "oooooooo",
       "id": 2
-    },
-    {
-      "dateOfInterview": "",
-      "timestamp": 1603465504862,
-      "author": "",
-      "suspect": "",
-      "note": "",
-      "id": 3
-    },
-    {
-      "dateOfInterview": "2020-10-06",
-      "timestamp": 1603465509191,
-      "author": "asdf",
-      "suspect": "asdf",
-      "note": "asdf",
-      "id": 4
     }
   ]
 }

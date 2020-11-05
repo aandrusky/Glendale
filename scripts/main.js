@@ -7,6 +7,7 @@ import { NoteForm } from "./Notes/NoteForm.js";
 import { noteList} from "./Notes/NoteList.js";
 import { createAlibiEventListener } from "./criminals/ALibiList.js";
 import { renderWitnessButton } from "./Witnesses/WitnessStmntButton.js";
+import "./Witnesses/WitnessStmntList.js"
 
 
 
