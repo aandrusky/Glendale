@@ -10,8 +10,8 @@ const render = (arrayOfCriminals) => {
     contentTarget.innerHTML = `
         <input id="note--dateOfInterview" type="date"/>
         <input id="note--author" placeholder="Your name here" type="text"/>
-        <select id="noteForm--criminal" class="criminalSelect">
-        <option value="0">Select Crimnal...</option>
+        <select id="note--criminal" class="criminalSelect">
+        <option value="0">Select Criminal...</option>
         ${
             arrayOfCriminals.map(criminal => {
               return `<option value="${ criminal.id }">${ criminal.name }</option>`
