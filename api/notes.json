@@ -1,36 +1,3 @@
 {
-  "notes": [
-    {
-      "dateOfInterview": "2020-10-06",
-      "timestamp": 1603465066701,
-      "author": "bob",
-      "criminalId": 1,
-      "note": "asdfa",
-      "id": 1
-    },
-    {
-      "dateOfInterview": "2020-11-17",
-      "timestamp": 1604696008499,
-      "author": "asdf",
-      "criminalId": 2,
-      "note": "000000",
-      "id": 2
-    },
-    {
-      "dateOfInterview": "2020-11-16",
-      "timestamp": 1604696075605,
-      "author": "asdfzsd",
-      "criminalId": 100,
-      "note": "asdfas",
-      "id": 3
-    },
-    {
-      "dateOfInterview": "2020-11-16",
-      "timestamp": 1604696076873,
-      "author": "asdfzsd",
-      "criminalId": 100,
-      "note": "asdfas",
-      "id": 4
-    }
-  ]
+  "notes": []
 }
