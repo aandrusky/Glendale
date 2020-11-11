@@ -14,17 +14,17 @@ const criminalsContainer = document.querySelector(".caseDataContainer")
 export const criminalList = () => {
     getFacilities()
         .then(getCriminalFacilities)
+        .then(getCriminals)
         .then(() => {
             const facilities = useFacilities()
             const crimFac = useCriminalFacilities()
-    getCriminals()
-        .then(() => {
             const criminalArray = useCriminals()
 
-            render(criminalArray, crimFac, facilities)
+            render(criminalArray, facilities, crimFac)
+            
             // console.log("this is my new render in criminalList()", criminalArray, crimFac, facilities)
         })
-    },
+    }
 
 eventHub.addEventListener("crimeSelected", event => {
     console.log("1 crimeSelected event happened", event.detail.crimeThatWasChosen)
@@ -55,7 +55,7 @@ eventHub.addEventListener("crimeSelected", event => {
 
     }
     
-}),
+})
 
 eventHub.addEventListener("officerSelected", officerSelectedEventObj => {
     const selectedOfficerName = officerSelectedEventObj.detail.officerName
@@ -77,26 +77,27 @@ eventHub.addEventListener("officerSelected", officerSelectedEventObj => {
           console.log("7 CriminalList: Filtered list of criminals rendered to DOM")
         render(filteredArrayCriminals)
         
-}))
+})
    
 const render = (criminalsToRender, allFacilities, allRelationships) => {
     // Step 1 - Iterate all criminals
+    // console.log(criminalsToRender, allFacilities, allRelationships)
     criminalsContainer.innerHTML = criminalsToRender.map(
         (criminalObject) => {
             // Step 2 - Filter all relationships to get only ones for this criminal
             const facilityRelationshipsForThisCriminal = allRelationships.filter(cf => cf.criminalId === criminalObject.id)
-
+            // console.log(facilityRelationshipsForThisCriminal, allRelationships)
             // Step 3 - Convert the relationships to facilities with map()
             const facilities = facilityRelationshipsForThisCriminal.map(cf => { const matchingFacilityObject = allFacilities.find(facility => facility.id === cf.facilityId)
-                console.log("what is this", matchingFacilityObject)
+                // console.log("what is this", matchingFacilityObject)
                 return matchingFacilityObject
             })
-            console.log("yay my facilities are filled", facilities)
+            //  console.log("yay my facilities are filled", facilities)
             // Must pass the matching facilities to the Criminal component
             return Criminal(criminalObject, facilities)
            
         }
     ).join("")
-}}
+}
 
 
