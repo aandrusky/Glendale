@@ -1,6 +1,6 @@
 const eventHub = document.querySelector(".container")
 
-export const Criminal = (criminalObj) => {   //makes a criminal into HTML represtentation
+export const Criminal = (criminalObj, facilityObj) => {   //makes a criminal into HTML represtentation
     return `
     <div id="criminal-${criminalObj.id}" class="criminal">
         <h5>${criminalObj.name}</h5>
@@ -8,6 +8,12 @@ export const Criminal = (criminalObj) => {   //makes a criminal into HTML repres
         <p>Crime: ${criminalObj.conviction}</p>
         <p>Term start: ${new Date(criminalObj.incarceration.start).toLocaleDateString('en-US')}</p>
         <p>Term complete: ${new Date(criminalObj.incarceration.end).toLocaleDateString('en-US')}</p>
+        <div>
+            <h2>Facilities</h2>
+                <ul>
+                    ${facilityObj.map(facilityItem => `<li>${facilityItem.facilityName}</li>`).join("")}
+                </ul>
+        </div>
         <button id="associates--${criminalObj.id}">Associate Alibis</button>
     </div>
     `
