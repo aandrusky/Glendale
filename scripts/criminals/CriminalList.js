@@ -59,10 +59,10 @@ eventHub.addEventListener("crimeSelected", event => {
 
 eventHub.addEventListener("officerSelected", officerSelectedEventObj => {
     const selectedOfficerName = officerSelectedEventObj.detail.officerName
-    console.log("5 CriminalList: officerSelected custom event has been heard on the event hub, selected officer name: ", selectedOfficerName)
+    // console.log("5 CriminalList: officerSelected custom event has been heard on the event hub, selected officer name: ", selectedOfficerName)
 
     const criminalsArray = useCriminals()
-    console.log("6 criminalsArray", criminalsArray)
+    // console.log("6 criminalsArray", criminalsArray)
     const filteredArrayCriminals = criminalsArray.filter(
         (criminalObj) => {
             // return criminalObj.arrestingOfficer === selectedOfficerName
@@ -73,10 +73,15 @@ eventHub.addEventListener("officerSelected", officerSelectedEventObj => {
               return false
             }
           )
-          console.log("CriminalList: Array of criminals filtered for only the criminals that were arrested by selected officer", filteredArrayCriminals)
-          console.log("7 CriminalList: Filtered list of criminals rendered to DOM")
+        //   console.log("CriminalList: Array of criminals filtered for only the criminals that were arrested by selected officer", filteredArrayCriminals)
+        //   console.log("7 CriminalList: Filtered list of criminals rendered to DOM")
         render(filteredArrayCriminals)
         
+})
+
+eventHub.addEventListener("facilitiesButtonClicked", facilityEventButtonObj => {
+    const 
+
 })
    
 const render = (criminalsToRender, allFacilities, allRelationships) => {
