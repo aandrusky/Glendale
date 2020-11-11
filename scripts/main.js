@@ -8,6 +8,7 @@ import { noteList} from "./Notes/NoteList.js";
 import { createAlibiEventListener } from "./criminals/ALibiList.js";
 import { renderWitnessButton } from "./Witnesses/WitnessStmntButton.js";
 import "./Witnesses/WitnessStmntList.js"
+import { renderFacilityButton } from "./facility/DisplayFacilitiesButton.js"
 
 
 
@@ -19,3 +20,4 @@ OfficerSelect()
 noteList()
 createAlibiEventListener()
 renderWitnessButton()
+renderFacilityButton()
