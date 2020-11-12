@@ -8,7 +8,9 @@ import { noteList} from "./Notes/NoteList.js";
 import { createAlibiEventListener } from "./criminals/ALibiList.js";
 import { renderWitnessButton } from "./Witnesses/WitnessStmntButton.js";
 import "./Witnesses/WitnessStmntList.js"
+import "./facility/FacilityList.js"
 import { renderFacilityButton } from "./facility/DisplayFacilitiesButton.js"
+import { renderCriminalButton } from "./criminals/DisplayCriminalsButton.js"
 
 
 
@@ -21,3 +23,4 @@ noteList()
 createAlibiEventListener()
 renderWitnessButton()
 renderFacilityButton()
+renderCriminalButton()
